@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puerto Rico - Nomadic Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">NOMADIC</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Destinations</a>
+            <ul class="dropdown">
+              <li><a href="#">Bora Bora</a></li>
+              <li><a href="#">Bali</a></li>
+              <li><a href="puertoRico.html">Puerto Rico</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignin"
+          >Sign up</a
+        >
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalLogin"
+          >Log in</a
+        >
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="container">
+        <h1>Select Your Destination</h1>
+
+        <label for="destinations">Choose a destination:</label>
+        <select id="destinations" name="destinations">
+          <option value="">--Select a Destination--</option>
+          <option value="puertoRico">Puerto Rico</option>
+          <option value="hawaii">Hawaii</option>
+          <option value="bali">Bali</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+        </select>
+
+        <div id="destinationInfo" class="info"></div>
+      </div>
+
+      <script>
+        document
+          .getElementById("destinations")
+          .addEventListener("change", function () {
+            var destinationInfo = document.getElementById("destinationInfo");
+            var selectedDestination = this.value;
+
+            switch (selectedDestination) {
+              case "puertoRico":
+                destinationInfo.innerHTML = `
+                            <h2>Puerto Rico</h2>
+                            <p>Puerto Rico is a Caribbean island and unincorporated U.S. territory with a landscape of mountains, waterfalls, and the El Yunque tropical rainforest. 
+                            In San Juan, the capital and largest city, the Isla Verde area is known for its hotel strip, beach bars, and casinos. 
+                            Its Old San Juan neighborhood features colorful Spanish colonial buildings and El Morro and La Fortaleza, massive, centuries-old fortresses.</p>
+                            <h3>Top Attractions:</h3>
+                            <ul>
+                                <li>Old San Juan</li>
+                                <li>El Yunque National Forest</li>
+                                <li>Bioluminescent Bay</li>
+                                <li>San Juan National Historic Site</li>
+                                <li>Culebra Island</li>
+                            </ul>
+                        `;
+                break;
+              // Add more cases here for other destinations
+              default:
+                destinationInfo.innerHTML = "";
+            }
+          });
+      </script>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Nomadic Adventures</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
