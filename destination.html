@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puerto Rico - Nomadic Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">NOMADIC</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Destinations</a>
+            <ul class="dropdown">
+              <li><a href="#">Bora Bora</a></li>
+              <li><a href="#">Bali</a></li>
+              <li><a href="puertoRico.html">Puerto Rico</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignin"
+          >Sign up</a
+        >
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalLogin"
+          >Log in</a
+        >
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="destination-container">
+        <h1>Select Your Destination</h1>
+        <div class="select-container">
+          <label id="destination-menu" for="destinations"
+            >Choose a destination:</label
+          >
+          <select id="destinations" name="destinations">
+            <option value="">--Select a Destination--</option>
+            <option value="puertoRico">Puerto Rico</option>
+            <option value="bora bora">Bora Bora</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="bali">Bali</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+        </div>
+
+        <div id="destinationInfo" class="info"></div>
+      </div>
+
+      <script>
+        document
+          .getElementById("destinations")
+          .addEventListener("change", function () {
+            var destinationInfo = document.getElementById("destinationInfo");
+            var selectedDestination = this.value;
+
+            switch (selectedDestination) {
+              case "puertoRico":
+                destinationInfo.innerHTML = `
+                            <h2>Puerto Rico</h2>
+                            <p>Puerto Rico is a Caribbean island and unincorporated U.S. territory with a landscape of mountains, waterfalls, and the El Yunque tropical rainforest. 
+                            In San Juan, the capital and largest city, the Isla Verde area is known for its hotel strip, beach bars, and casinos. 
+                            Its Old San Juan neighborhood features colorful Spanish colonial buildings and El Morro and La Fortaleza, massive, centuries-old fortresses.</p>
+                            <h3>Top Attractions:</h3>
+                            <ul>
+                                <li>Old San Juan</li>
+                                <li>El Yunque National Forest</li>
+                                <li>Bioluminescent Bay</li>
+                                <li>San Juan National Historic Site</li>
+                                <li>Culebra Island</li>
+                            </ul>
+                        `;
+                break;
+              case "bora bora":
+                destinationInfo.innerHTML = `<h2>Bora Bora</h2>
+        <p>Bora Bora is a French Polynesian island known for its overwater bungalows, crystal-clear lagoons, and luxurious resorts. It's a popular honeymoon destination and a paradise for water activities like snorkeling and diving.</p>
+        <h3>Top Attractions:</h3>
+        <ul>
+          <li>Overwater bungalows: Experience unparalleled luxury with a private bungalow perched over the lagoon.</li>
+          <li>Motu (islets): Explore the small islands surrounding Bora Bora for secluded beaches and snorkeling spots.</li>
+          <li>Lagoon cruises: Enjoy a scenic boat tour with snorkeling stops and breathtaking views.</li>
+          <li>Shark and ray feeding: Encounter these magnificent creatures in their natural habitat.</li>
+          <li>Mount Otemanu: Hike to the top of the extinct volcano for panoramic island views.</li>
+        </ul>`;
+                break;
+              case "hawaii":
+                destinationInfo.innerHTML = `
+              <h2>Hawaii</h2>
+              <p>Hawaii is a U.S. state located in the Pacific Ocean. It is the only U.S. state composed entirely of islands. The islands are known for their rugged landscapes, beautiful beaches, and rich cultural heritage.</p>
+              <h3>Top Attractions:</h3>
+              <ul>
+                  <li>Waikiki Beach</li>
+                  <li>Haleakalā National Park</li>
+                  <li>Hawaiʻi Volcanoes National Park</li>
+                  <li>Diamond Head</li>
+                  <li>Na Pali Coast State Wilderness Park</li>
+              </ul>
+            `;
+                break;
+              case "bali":
+                destinationInfo.innerHTML = `<h2>Bali</h2>
+        <p>Bali is an Indonesian island known for its beautiful beaches, volcanic mountains, rice terraces, and rich Hindu culture. It's a popular destination for relaxation, adventure, and cultural immersion.</p>
+        <h3>Top Attractions:</h3>
+        <ul>
+          <li>Seminyak: Upscale beach resort town with luxury hotels and restaurants.</li>
+          <li>Ubud: Cultural center known for traditional dance performances, art galleries, and rice terraces.</li>
+          <li>Tanah Lot Temple: Picturesque Hindu temple perched on a rock in the ocean.</li>
+          <li>Mount Batur: Active volcano with stunning sunrise views.</li>
+          <li>Nusa Dua: Exclusive resort area with beautiful beaches and world-class golf courses.</li>
+        </ul>`;
+                break;
+              case "paris":
+                destinationInfo.innerHTML = `<h2>Paris</h2>
+        <p>Paris, the City of Lights, is the capital of France and a world-famous destination for romance, culture, and history. It's known for its iconic landmarks like the Eiffel Tower, the Louvre Museum, and the Notre Dame Cathedral.</p>
+        <h3>Top Attractions:</h3>
+        <ul>
+          <li>Eiffel Tower: Ascend the iconic tower for breathtaking panoramic views of the city.</li>
+          <li>Louvre Museum: Explore one of the world's largest and most renowned museums, housing masterpieces like the Mona Lisa.</li>
+          <li>Notre Dame Cathedral: Visit this historic Gothic cathedral, a symbol of Parisian culture and architecture.</li>
+          <li>Musée d'Orsay: Immerse yourself in the world of Impressionist and Post-Impressionist art.</li>
+          <li>Seine River: Enjoy a scenic cruise or stroll along the banks of the Seine, a quintessential Parisian experience.</li>
+        </ul>`;
+                break;
+              case "tokyo":
+                destinationInfo.innerHTML = `<h2>Tokyo</h2>
+        <p>Tokyo, the capital of Japan, is a vibrant metropolis known for its blend of modern technology and ancient traditions. It offers a unique mix of towering skyscrapers, historic temples, and delicious Japanese cuisine.</p>
+        <h3>Top Attractions:</h3>
+        <ul>
+          <li>Shibuya Crossing: Experience the world's busiest pedestrian crossing, a must-see for any visitor.</li>
+          <li>Sensō-ji Temple: Visit the oldest temple in Tokyo and immerse yourself in Japanese culture.</li>
+          <li>Tokyo Tower: Enjoy panoramic views of the city from this iconic (tower) inspired by the Eiffel Tower.</li>
+          <li>Ghibli Museum: Explore the world of Studio Ghibli, a renowned animation studio.</li>
+          <li>Harajuku: Discover the latest fashion trends and quirky street culture in this vibrant district.</li>
+        </ul>`;
+                break;
+              default:
+                destinationInfo.innerHTML = "";
+            }
+          });
+      </script>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Nomadic Adventures</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puerto Rico - Nomadic Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">NOMADIC</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Destinations</a>
+            <ul class="dropdown">
+              <li><a href="#">Bora Bora</a></li>
+              <li><a href="#">Bali</a></li>
+              <li><a href="puertoRico.html">Puerto Rico</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignin"
+          >Sign up</a
+        >
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalLogin"
+          >Log in</a
+        >
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="destination-container">
+        <h1>Select Your Destination</h1>
+        <div class="select-container">
+          <label id="destination-menu" for="destinations"
+            >Choose a destination:</label
+          >
+          <select id="destinations" name="destinations">
+            <option value="">--Select a Destination--</option>
+            <option value="puertoRico">Puerto Rico</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="bali">Bali</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+        </div>
+
+        <div id="destinationInfo" class="info"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Nomadic Adventures</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("destinations")
+        .addEventListener("change", function () {
+          var destinationInfo = document.getElementById("destinationInfo");
+          var selectedDestination = this.value;
+
+          switch (selectedDestination) {
+            case "puertoRico":
+              destinationInfo.innerHTML = `
+                          <h2>Puerto Rico</h2>
+                          <p>Puerto Rico is a Caribbean island and unincorporated U.S. territory with a landscape of mountains, waterfalls, and the El Yunque tropical rainforest. 
+                          In San Juan, the capital and largest city, the Isla Verde area is known for its hotel strip, beach bars, and casinos. 
+                          Its Old San Juan neighborhood features colorful Spanish colonial buildings and El Morro and La Fortaleza, massive, centuries-old fortresses.</p>
+                          <h3>Top Attractions:</h3>
+                          <ul>
+                              <li>Old San Juan</li>
+                              <li>El Yunque National Forest</li>
+                              <li>Bioluminescent Bay</li>
+                              <li>San Juan National Historic Site</li>
+                              <li>Culebra Island</li>
+                          </ul>
+                      `;
+              break;
+            // Add more cases here for other destinations
+            case "hawaii":
+              destinationInfo.innerHTML = `
+            <h2>Hawaii</h2>
+            <p>Hawaii is a U.S. state located in the Pacific Ocean. It is the only U.S. state composed entirely of islands. The islands are known for their rugged landscapes, beautiful beaches, and rich cultural heritage.</p>
+            <h3>Top Attractions:</h3>
+            <ul>
+                <li>Waikiki Beach</li>
+                <li>Haleakalā National Park</li>
+                <li>Hawaiʻi Volcanoes National Park</li>
+                <li>Diamond Head</li>
+                <li>Na Pali Coast State Wilderness Park</li>
+            </ul>
+          `;
+              break;
+            // Add more cases here for other destinations
+            default:
+              destinationInfo.innerHTML = "";
+          }
+        });
+    </script>
+  </body>
+</html> -->
