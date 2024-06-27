@@ -212,7 +212,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #15179f;
+  color: #1729c6;
 }
 
 header nav ul .dropdown {
@@ -367,6 +367,32 @@ footer p {
   text-align: center; /* Optional: if you want the text inside the table to be centered */
 }
 
+/* Ensure the modal covers the entire viewport */
+.modal-dialog {
+  position: fixed; /* Changed from absolute to fixed to ensure it's relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ensure it spans the full viewport width */
+  height: 100vh; /* Ensure it spans the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Removed to ensure it starts from the very top and left */
+  max-width: none; /* Override any max-width to allow full width */
+}
+
 .custom-bg {
-  background-color: rgba(0, 0, 0, 0.1); /* Black with 50% opacity */
+  background-color: rgb(14, 21, 151); /* Black with 50% opacity */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important; /* Override padding if necessary */
+}
+
+/* Ensure the modal backdrop covers the entire viewport */
+.modal-backdrop.show {
+  width: 100vw !important;
+  height: 100vh !important;
 }
